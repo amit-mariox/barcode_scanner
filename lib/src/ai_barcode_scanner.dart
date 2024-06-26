@@ -291,14 +291,6 @@ class _AiBarcodeScannerState extends State<AiBarcodeScanner> {
                 ],
               ),
           extendBodyBehindAppBar: true,
-          bottomSheet: isLandscape
-              ? null
-              : DraggableSheet(
-                  title: widget.title,
-                  hideDragHandler: widget.hideDragHandler,
-                  hideTitle: widget.hideTitle,
-                  child: widget.child,
-                ),
           body: Stack(
             children: [
               MobileScanner(
