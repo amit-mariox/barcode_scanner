@@ -259,12 +259,12 @@ class _AiBarcodeScannerState extends State<AiBarcodeScanner> {
         return Scaffold(
           appBar: widget.appBar ??
               AppBar(
-                leading: Navigator.canPop(context)
-                    ? IconButton(
-                        icon: const Icon(Icons.close_rounded),
-                        onPressed: widget.onPop ?? () => Navigator.pop(context),
-                      )
-                    : null,
+                // leading: Navigator.canPop(context)
+                //     ? IconButton(
+                //         icon: const Icon(Icons.close_rounded),
+                //         onPressed: widget.onPop ?? () => Navigator.pop(context),
+                //       )
+                //     : null,
                 backgroundColor: Colors.transparent,
                 foregroundColor: Colors.white,
                 elevation: 0,
@@ -291,6 +291,14 @@ class _AiBarcodeScannerState extends State<AiBarcodeScanner> {
                 ],
               ),
           extendBodyBehindAppBar: true,
+          // bottomSheet: isLandscape
+          //     ? null
+          //     : DraggableSheet(
+          //         title: widget.title,
+          //         hideDragHandler: widget.hideDragHandler,
+          //         hideTitle: widget.hideTitle,
+          //         child: widget.child,
+          //       ),
           body: Stack(
             children: [
               MobileScanner(
@@ -336,22 +344,22 @@ class _AiBarcodeScannerState extends State<AiBarcodeScanner> {
                     );
                   },
                 ),
-              if (!isLandscape)
-                Align(
-                  alignment: widget.buttonAlignment ??
-                      Alignment.lerp(
-                        Alignment.bottomCenter,
-                        Alignment.center,
-                        0.75,
-                      )!,
-                  child: GalleryButton(
-                    onImagePick: widget.onImagePick,
-                    onDetect: widget.onDetect,
-                    validator: widget.validator,
-                    controller: controller,
-                    isSuccess: _isSuccess,
-                  ),
-                ),
+              // if (!isLandscape)
+              //   Align(
+              //     alignment: widget.buttonAlignment ??
+              //         Alignment.lerp(
+              //           Alignment.bottomCenter,
+              //           Alignment.center,
+              //           0.75,
+              //         )!,
+              //     child: GalleryButton(
+              //       onImagePick: widget.onImagePick,
+              //       onDetect: widget.onDetect,
+              //       validator: widget.validator,
+              //       controller: controller,
+              //       isSuccess: _isSuccess,
+              //     ),
+              //   ),
             ],
           ),
         );
